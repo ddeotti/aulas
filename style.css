@@ -1,0 +1,94 @@
+       /* Reset básico e fonte */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* Container Principal da Calculadora */
+        .calculator {
+            width: 320px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #333;
+        }
+
+        /* Visor (Display) */
+        #display {
+            background-color: #444;
+            color: white;
+            font-size: 2.5rem;
+            padding: 20px;
+            text-align: right;
+            height: 80px;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+
+        /* Grid de Botões */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+        }
+
+        /* Estilo Geral dos Botões */
+        button {
+            height: 80px;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+            background-color: #666;
+            color: white;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+        
+        /* * NOVA CLASSE: .active
+         * Esta classe será adicionada via JS quando uma tecla for pressionada
+         * para dar feedback visual.
+        */
+        button.active {
+            background-color: #999;
+        }
+
+        /* Botões de Operadores (laranja) */
+        .operator {
+            background-color: #f09a36;
+        }
+        .operator:hover {
+            background-color: #f0a850;
+        }
+        .operator.active {
+            background-color: #f0c070;
+        }
+
+        /* Botão de Igual (verde) */
+        .equals {
+            background-color: #4caf50;
+            grid-row: span 2;
+        }
+        .equals:hover {
+            background-color: #5cb860;
+        }
+        .equals.active {
+            background-color: #7cce80;
+        }
+
+        /* Botão Zero (ocupa 2 colunas) */
+        #zero {
+            grid-column: span 2;
+        }
